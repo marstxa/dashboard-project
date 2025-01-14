@@ -1,0 +1,97 @@
+<script lang="ts">
+    import ChartsTemplate from "./charts-template.svelte";
+    import sales from "$lib/sales.json" assert {type: "json"};
+    
+    let groupedSales: {[x:string]:number} = {};
+
+    sales.forEach(transaction => {
+        const location = transaction.location;
+        const itemSold = transaction.items_bought;
+
+        if (!groupedSales[location]){
+            groupedSales[location] = 0
+        }
+
+        groupedSales[location] += itemSold;
+    });
+
+    let labels = Object.keys(groupedSales)
+    let f_data = Object.values(groupedSales)
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Data',
+            data: f_data,
+            backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+            ],
+            borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+    }]
+    };
+    
+    const options = {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+            legend: {
+                position: 'top',
+                labels: {
+                    color: '#FFFFFF'
+                }
+            },
+            title: {
+                color: '#FFFFFF',
+                display: true,
+                text: 'Sales by Age Group'
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Age Group',
+                    color: '#FFFFFF'
+                },
+                ticks: {
+                    color: '#E9E9E9'
+                },
+                grid: {
+                    color: '#BBBBBB'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Total Sales',
+                    color: '#FFFFFF'
+                },
+                ticks: {
+                    color: '#E9E9E9'
+                },
+                grid: {
+                    color: '#BBBBBB' 
+                }
+            },
+        }
+    }
+
+</script>
+  
+<ChartsTemplate type="bar" {data} {options} />
+
