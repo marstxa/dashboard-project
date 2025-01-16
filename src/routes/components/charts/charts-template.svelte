@@ -28,6 +28,6 @@
 
 </script>
 
-<div class="card">
+<div class="w-full h-full">
     <canvas bind:this={chartCanvas}></canvas>
 </div>

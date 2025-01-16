@@ -79,6 +79,7 @@
     
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'top',
@@ -112,20 +113,18 @@
 
 </script>
 
-<div class="card bg-base-300 w-full h-full shadow-xl card-bordered">
+<div class="card bg-base-300 w-8/12 font-rubik h-full shadow-xl card-bordered">
     <div class="card-body">
-        <h4 class="card-title">Revenue Statistics</h4>
-        <h2>
+        <h4 class="card-title text-sm font-semibold">Revenue Statistics</h4>
+        <h2 class="text-6xl font-bold mt-3">
             {"$" + currentTotal.toFixed(2) + "K"}
             {#if green === true}
-            <span class="badge badge-success">{"+" + percentageChange.toFixed(2) + "%"}</span>
+            <span class="ml-5 badge badge-sm badge-success text-white">{"+" + percentageChange.toFixed(2) + "%"}</span>
             {:else}
-            <span class="badge badge-error">{"-" + Math.abs(percentageChange).toFixed(2) + "%"}</span>
+            <span class="ml-5 badge badge-sm badge-error text-white">{"-" + Math.abs(percentageChange).toFixed(2) + "%"}</span>
             {/if}
         </h2>
-        <p>Total income this year</p>
+        <p class="text-sm opacity-50 mt-5">Total income this year</p>
     </div>
-    <div>
         <ChartsTemplate type="bar" {data} {options}/>
-    </div>
 </div>

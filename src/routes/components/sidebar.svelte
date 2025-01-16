@@ -8,10 +8,12 @@
     import LineChart from "./charts/line-chart.svelte";
     import PolarArea from "./charts/polar-area.svelte";
     import HorizontalBarChart from "./charts/horizontal-bar-chart.svelte"
+	import ChatBox from "./chat-box.svelte";
+    import Footer from "./footer.svelte";
 </script>
 
 <!--Navbar with Sidebar-->
-<div class="drawer overflow-hidden  ">
+<div class="drawer">
     <input type="checkbox" class="drawer-toggle" id="my-drawer-3">
     <div class="drawer-content flex flex-col w-full">
 
@@ -36,7 +38,7 @@
                 <input type="text" placeholder="Search" class="input input-bordered md:w-auto decoration-none w-24">
             </div>
 
-            <div class="hidden flex-none lg:block">
+            <div class="flex-none lg:block">
                 <ul class="menu menu-horizontal items-center">
                     <li><ThemeController></ThemeController></li>
                     <li><Avatar></Avatar></li>
@@ -45,29 +47,27 @@
         </div>
 
         <!--Content-->
-        <div class="m-5 flex flex-col w-full justify-center">
+        <div class="p-5 flex flex-col w-full justify-center">
             <div class="flex items-start mt-4">
                 <h3 class="text-ghost font-rubik text-lg">Overview</h3>
             </div>
             <div class="flex flex-wrap flex-1 justify-evenly m-14">
-                <div><DataCards/></div>
-                <div><DataCards/></div>
-                <div><DataCards/></div>
-                <div><DataCards/></div>
+                <DataCards/>
             </div>
             <div class="flex flex-col w-full">
-                <div class="flex flex-row flex-1 w-full items-center h-auto justify-between gap-10">
-                    <div class="w-2/3 h-full">
-                        <BarChart chartCanvas=true chartInstance=true/>
-                    </div>
-                    <div class="w-1/3 h-full">
-                        <LineChart chartCanvas=true chartInstance=true/>
-                    </div>
+                <div class="flex flex-row w-full items-center justify-between gap-10 mb-20" style="height: 700px;">
+                    <BarChart chartCanvas=true chartInstance=true/>
+                    <LineChart chartCanvas=true chartInstance=true/>
                 </div>
-                <PolarArea  chartCanvas=true chartInstance=true/>
-                <HorizontalBarChart chartCanvas=true chartInstance=true/>
+                <div class="flex flex-row w-full items-center justify-between gap-5 mb-20" style="height: 800px;">
+                    <HorizontalBarChart  chartCanvas=true chartInstance=true/>
+                    <ChatBox/>
+                    <PolarArea chartCanvas=true chartInstance=true/>
+                </div>
             </div>
         </div>
+        
+        <Footer/>
 
     </div>
         <div class="drawer-side">

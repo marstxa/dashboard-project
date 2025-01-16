@@ -36,6 +36,7 @@
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'top',  // Position the legend at the top
@@ -66,9 +67,11 @@
 
 </script>
 
-<div class="card w-full bg-base-300 h-auto shadow-xl card-bordered">
+<div class="card bg-base-300 font-rubik h-full shadow-xl card-bordered w-4/12">
     <div class="card-body">
-        <h4 class="card-title">Payment Methods</h4>
-        <ChartsTemplate type="polarArea" {data} {options}/>
+        <h4 class="card-title text-sm font-semibold mb-10">Payment Methods</h4>
+        <div class="flex items-center justify-center w-full h-full">
+            <ChartsTemplate type="polarArea" {data} {options}/>
+        </div>
     </div>
 </div>

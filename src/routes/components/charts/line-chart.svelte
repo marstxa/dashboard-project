@@ -79,6 +79,7 @@
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'top'
@@ -107,42 +108,40 @@
 
 </script>
 
-<div class="card bg-base-300 shadow-xl card-bordered">
+<div class="card bg-base-300 shadow-xl font-rubik card-bordered w-4/12 h-full">
     <div class="card-body">
-        <h4 class="card-title">Customers Aquisitions</h4>
-    <div class="flex flex-row items-start justify-between">
+        <h4 class="card-title text-sm font-semibold">Customers Aquisitions</h4>
+    <div class="flex flex-row items-start justify-between mt-10 mb-20">
         <div class="flex flex-col items-center w-1/3">
-            <h3>Users</h3>
-            <h1>{dataOne}</h1>
+            <h3 >Users</h3>
+            <h1 class="text-3xl m-4">{dataOne}</h1>
             {#if isPositive(percentageChangeOne) === true}
-            <span class="badge badge-success">{"+" + percentageChangeOne + "%"}</span>
+            <span class="badge text-white badge-sm badge-success">{"+" + percentageChangeOne + "%"}</span>
             {:else}
-            <span class="badge badge-error">{percentageChangeOne + "%"}</span>
+            <span class="badge badge-sm badge-error text-white">{percentageChangeOne + "%"}</span>
             {/if}
         </div>
         <div class="flex flex-col items-center w-1/3 border-solid border-x-2 border-x-neutral-50 border-opacity-10">
             <h3>Sessions</h3>
-            <h1>{dataTwo}</h1>
+            <h1 class="text-3xl m-4">{dataTwo}</h1>
             {#if isPositive(percentageChangeTwo) === true}
-            <span class="badge badge-success">{"+" + percentageChangeTwo + "%"}</span>
+            <span class="badge badge-sm badge-success text-white">{"+" + percentageChangeTwo + "%"}</span>
             {:else}
-            <span class="badge badge-error">{percentageChangeTwo + "%"}</span>
+            <span class="badge badge-sm badge-error text-white">{percentageChangeTwo + "%"}</span>
             {/if}
         </div>
         <div class="flex flex-col items-center w-1/3">
             <h3>New Customers</h3>
-            <h1>{dataThree}</h1>
+            <h1 class="text-3xl m-4">{dataThree}</h1>
             {#if isPositive(percentageChangeThree) === true}
-            <span class="badge badge-success">{"+" + percentageChangeThree + "%"}</span>
+            <span class="badge badge-sm badge-success text-white">{"+" + percentageChangeThree + "%"}</span>
             {:else}
-            <span class="badge badge-error">{percentageChangeThree + "%"}</span>
+            <span class="badge badge-sm badge-error text-white">{percentageChangeThree + "%"}</span>
             {/if}
         </div>
     </div>
 
-    <div>
-        <ChartsTemplate type="line" {data} {options}/>
-    </div>
+    <ChartsTemplate type="line" {data} {options}/>
     </div>
 </div>
 

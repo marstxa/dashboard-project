@@ -47,16 +47,15 @@
     
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         indexAxis: 'y',
         plugins: {
             legend: {
                 position: 'top',
                 labels: {
-                    color: '#FFFFFF'
                 }
             },
             title: {
-                color: '#FFFFFF',
                 display: true,
                 text: ''
             }
@@ -66,10 +65,8 @@
                 title: {
                     display: true,
                     text: '',
-                    color: '#FFFFFF'
                 },
                 ticks: {
-                    color: '#E9E9E9'
                 },
                 grid: {
                     color: '#BBBBBB'
@@ -79,10 +76,8 @@
                 title: {
                     display: true,
                     text: '',
-                    color: '#FFFFFF'
                 },
                 ticks: {
-                    color: '#E9E9E9'
                 },
                 grid: {
                     color: '#BBBBBB' 
@@ -93,9 +88,9 @@
 
 </script>
 
-<div class="card w-full h-auto card-bordered bg-base-300">
+<div class="card w-5/12 font-rubik h-full card-bordered bg-base-300">
     <div class="card-body">
-        <h4 class="card-title">Top Locations</h4>
+        <h4 class="card-title mb-5 text-sm font-semibold">Top Locations</h4>
         <ChartsTemplate type="bar" {data} {options} />
     </div>
 </div>
