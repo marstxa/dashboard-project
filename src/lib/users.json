@@ -1,0 +1,32 @@
+[
+    {
+        "userName": "Mia Johnson",
+        "src": "https://randomuser.me/api/portraits/women/0.jpg",
+        "message": "It's called dreamscape, a must watch.",
+        "time": "02:10 AM"
+    },
+    {
+        "userName": "John Doe",
+        "src": "https://randomuser.me/api/portraits/men/1.jpg",
+        "message": "The sunset looks amazing today!",
+        "time": "04:15 PM"
+    },
+    {
+        "userName": "Sarah Williams",
+        "src": "https://randomuser.me/api/portraits/women/2.jpg",
+        "message": "Just finished reading a new book, highly recommend it.",
+        "time": "11:05 AM"
+    },
+    {
+        "userName": "Michael Brown",
+        "src": "https://randomuser.me/api/portraits/men/3.jpg",
+        "message": "Looking forward to the weekend getaway!",
+        "time": "06:30 PM"
+    },
+    {
+        "userName": "Emily Davis",
+        "src": "https://randomuser.me/api/portraits/women/4.jpg",
+        "message": "How is everyone doing today?",
+        "time": "09:00 AM"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Revenue",
+        "number": "$587.54",
+        "percentage": "10.9%",
+        "info": "+$112.58"
+    },
+    {
+        "title": "Sales",
+        "number": "4500",
+        "percentage": "21.1%",
+        "info": "25"
+    },
+    {
+        "title": "Profit",
+        "number": "$320.00",
+        "percentage": "15.5%",
+        "info": "+$45.00"
+    },
+    {
+        "title": "Customers",
+        "number": "1200",
+        "percentage": "5.2%",
+        "info": "+60"
+    }
+]
